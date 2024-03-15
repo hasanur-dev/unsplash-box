@@ -2,15 +2,15 @@ import { useNavigate } from "react-router-dom";
 import { useUserContext } from "../../contexts/UserContext";
 import Button from "../../ui/Button";
 import CollectionRow from "./CollectionRow";
-import { getPersonalCollections, loginUrl } from "../../services/apiUnsplash";
+import { getPersonalCollections } from "../../services/apiUnsplash";
 import { useQuery } from "@tanstack/react-query";
 
 export default function PersonalCollections() {
   const { user } = useUserContext();
   const navigate = useNavigate();
-  const handleLogin = () => {
-    navigate(loginUrl);
-  };
+  // const handleLogin = () => {
+  //   navigate(loginUrl);
+  // };
 
   const { data: personalCollectionsData, isPending } = useQuery({
     queryKey: ["personalCollections"],
@@ -29,9 +29,9 @@ export default function PersonalCollections() {
       ) : (
         <div className="flex flex-col items-start gap-2">
           <p>Login to see and update your collections</p>
-          <Button url={loginUrl} onClick={handleLogin}>
+          {/* <Button url={loginUrl} onClick={handleLogin}>
             Login
-          </Button>
+          </Button> */}
         </div>
       )}
     </div>

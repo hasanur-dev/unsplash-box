@@ -1,4 +1,4 @@
-// functions/collectionPhotos.js
+// functions/getCollectionPhotos.js
 exports.handler = async function (event, context) {
   const { collectionId, page, per_page, access_token } =
     event.queryStringParameters;

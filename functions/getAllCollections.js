@@ -1,4 +1,4 @@
-// functions/hello.js
+// functions/getAllCOllections.js
 exports.handler = async function (event, context) {
   const { pageParam } = event.queryStringParameters;
   const base_url = process.env.BASE_URL;

@@ -9,7 +9,8 @@ import ImageDetails from "./pages/ImageDetails";
 import Collections from "./pages/Collections";
 import CollectionPhotos from "./pages/CollectionPhotos";
 import { UserProvider, useUserContext } from "./contexts/UserContext";
-import HandleLogin from "./pages/HandleLogin";
+import Login from "./pages/Login";
+import CheckLogin from "./pages/CheckLogin";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -30,7 +31,8 @@ export default function App() {
             <Route element={<AppLayout />}>
               <Route index element={<Navigate replace to="home" />} />
               <Route path="home" element={<Home />} />
-              <Route path="/login" element={<HandleLogin />} />
+              <Route path="/login-page" element={<Login />} />
+              <Route path="/login" element={<CheckLogin />} />
               <Route
                 path="home/images/:imageQuery"
                 element={<SearchResults />}

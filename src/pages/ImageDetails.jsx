@@ -35,13 +35,14 @@ export default function ImageDetails() {
     console.log("hello");
     navigate(`?modal=addToCollection&imageId=${imageId}`);
   };
+  console.log(imageData);
+
   if (isLoading) return <Spinner />;
   const {
     alt_description,
     urls: { full },
     user: { updated_at, name, profile_image },
   } = imageData;
-
   const uploadDate = new Date(updated_at);
 
   // console.log(uploadDate.getDate());
