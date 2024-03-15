@@ -27,10 +27,10 @@ export const getPersonalCollections = async (user) => {
 export const loginUser = async (code) => {
   if (!code) console.log("no code");
   const res = await fetch(`/.netlify/functions/loginUser?code=${code}`);
-  // if (!res.ok) {
-  //   console.log(res);
-  //   throw new Error("Network response was not ok");
-  // }
+  if (!res.ok) {
+    console.log(res);
+    throw new Error("Network response was not ok");
+  }
   const data = await res.json();
   return data.data;
 };
