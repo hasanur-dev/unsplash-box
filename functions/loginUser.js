@@ -16,10 +16,10 @@ exports.handler = async function (event, context) {
     },
     body: JSON.stringify(body),
   });
-  if (!res.ok) {
-    console.log(res);
-    throw new Error("Network response was not ok");
-  }
+  // if (!res.ok) {
+  //   console.log(res);
+  //   throw new Error("Network response was not ok");
+  // }
   const data = await res.json();
   return {
     statusCode: 200,
