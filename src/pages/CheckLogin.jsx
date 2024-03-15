@@ -16,7 +16,7 @@ export default function CheckLogin() {
     queryKey: ["user"],
     queryFn: () => loginUser(code),
   });
-
+  console.log(data)
   useEffect(() => {
     if (isSuccess) {
       setUser(data);
