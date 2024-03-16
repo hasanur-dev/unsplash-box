@@ -11,7 +11,8 @@ export default function Login() {
   console.log(user);
   useEffect(() => {
     if (user && user.access_token) {
-      navigate(-1);
+      // navigate(-1);
+      console.log(user);
     }
   }, [user, navigate]);
   return (

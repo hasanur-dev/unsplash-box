@@ -16,11 +16,11 @@ export default function CheckLogin() {
     queryKey: ["user"],
     queryFn: () => loginUser(code),
   });
-  console.log(data)
+
   useEffect(() => {
     if (isSuccess) {
       setUser(data);
-      navigate(-1);
+      // navigate(-1);
     }
   }, [isSuccess, navigate, setUser, data]);
 

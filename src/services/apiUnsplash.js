@@ -27,6 +27,7 @@ export const getPersonalCollections = async (user) => {
 export const loginUser = async (code) => {
   if (!code) console.log("no code");
   const res = await fetch(`/.netlify/functions/loginUser?code=${code}`);
+  console.log(res);
   if (!res.ok) {
     console.log(res);
     throw new Error("Network response was not ok");
@@ -57,6 +58,8 @@ export const getCollectionPhotos = async ({
     `/.netlify/functions/getCollectionPhotos?collectionId=${collectionId}&page=${pageParam}&per_page=${perPage}&access_token=${user.access_token}`,
   );
   const data = await res.json();
+  console.log(res);
+  console.log(data);
   return { images: data.data, nextPage: pageParam + 1 };
 };
 
