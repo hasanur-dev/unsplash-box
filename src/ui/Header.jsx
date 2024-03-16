@@ -21,7 +21,7 @@ export default function Header({ darkMode, handleDarkMode }) {
               // className="navLink rounded-md bg-gray-light/0 px-5 py-2.5  text-sm font-medium transition-colors duration-300 "
               to="home"
               className={({ isActive }) => {
-                return ` navLink ${isActive ? "bg-gray-light dark:bg-gray-transparent" : "bg-gray-50/0"} rounded-md bg-gray-light/0 px-5 py-2.5  text-sm font-medium transition-colors duration-300 `;
+                return ` navLink ${isActive ? "bg-gray-light dark:bg-gray-transparent" : ""} rounded-md  px-5 py-2.5  text-sm font-medium transition-colors duration-300 `;
               }}
             >
               Home
@@ -31,7 +31,7 @@ export default function Header({ darkMode, handleDarkMode }) {
             <NavLink
               to="/collections"
               className={({ isActive }) => {
-                return ` navLink ${isActive ? "bg-gray-light dark:bg-gray-transparent" : "bg-gray-50/0"} rounded-md bg-gray-light/0 px-5 py-2.5  text-sm font-medium transition-colors duration-300 `;
+                return ` navLink ${isActive ? "bg-gray-light dark:bg-gray-transparent" : ""} rounded-md  px-5 py-2.5  text-sm font-medium transition-colors duration-300 `;
               }}
             >
               Collections
