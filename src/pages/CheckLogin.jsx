@@ -20,7 +20,7 @@ export default function CheckLogin() {
   useEffect(() => {
     if (isSuccess) {
       setUser(data);
-      // navigate(-1);
+      navigate(-1);
     }
   }, [isSuccess, navigate, setUser, data]);
 
