@@ -4,7 +4,7 @@ exports.handler = async function (event, context) {
   const body = {
     client_id: process.env.ACCESS_KEY,
     client_secret: process.env.CLIENT_SECRET,
-    redirect_uri: "http://localhost:8888/login",
+    redirect_uri: process.env.REDIRECT_URI,
     code: code,
     grant_type: "authorization_code",
   };
@@ -16,11 +16,12 @@ exports.handler = async function (event, context) {
     },
     body: JSON.stringify(body),
   });
-  // if (!res.ok) {
-  //   console.log(res);
-  //   throw new Error("Network response was not ok");
-  // }
+  if (!res.ok) {
+    console.log(res);
+    throw new Error("Network response was not ok");
+  }
   const data = await res.json();
+  console.log(data);
   return {
     statusCode: 200,
     body: JSON.stringify({ data }),
